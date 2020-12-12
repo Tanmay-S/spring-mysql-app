@@ -1,6 +1,5 @@
 package com.ahc.springmysqlapp.controllers;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,8 +14,12 @@ import com.ahc.springmysqlapp.repositories.UserRepository;
 @RequestMapping("/demo")
 public class MainController {
 
-	@Autowired
-	private UserRepository userRepository;
+	private final UserRepository userRepository;
+
+	public MainController(UserRepository userRepository) {
+		super();
+		this.userRepository = userRepository;
+	}
 
 	@PostMapping("/add")
 	public @ResponseBody String addNewUser(@RequestParam String name, @RequestParam String email) {
