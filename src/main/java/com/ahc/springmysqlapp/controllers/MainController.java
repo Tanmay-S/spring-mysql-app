@@ -17,7 +17,6 @@ public class MainController {
   private final UserRepository userRepository;
 
   public MainController(UserRepository userRepository) {
-    super();
     this.userRepository = userRepository;
   }
 

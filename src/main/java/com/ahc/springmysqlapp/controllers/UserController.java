@@ -21,4 +21,10 @@ public class UserController {
     model.addAttribute("users", userRepository.findAll());
     return "user/index";
   }
+
+  @RequestMapping("/new")
+  public String getUserRegistrationPage() {
+    return "user/new";
+  }
+  
 }
